@@ -1,14 +1,23 @@
-module.exports.config = {
-  name: "emojiReply",
-  version: "1.0.0",
-  hasPermssion: 0,
-  credits: "You",
-  description: "Responds differently to various emojis",
-  commandCategory: "fun",
-  usages: "[emoji]",
-  cooldowns: 0,
-  prefix: false
+const axios = require("axios");
+
+const mahmud = async () => {
+  const base = await axios.get("https://raw.githubusercontent.com/mahmudx7/exe/main/baseApiUrl.json");
+  return base.data.mahmud;
 };
+
+module.exports = {
+  config: {
+    name: "4k",
+    version: "1.7",
+    author: "MahMUD",
+    countDown: 10,
+    role: 0,
+    category: "image",
+    description: "Enhance or restore image quality using 4k AI.",
+    guide: {
+      en: "{pn} [url] or reply with image"
+    }
+  },
 
 module.exports.handleEvent = async function({ api, event, Users }) {
   try {
